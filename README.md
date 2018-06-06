@@ -10,7 +10,7 @@ Just type help to get a list of supported commands.
 
 ```
 call <number> -- asks you what line to use to place the call. Answer in a thread to get connected.
-send message to <number>` -- asks what message to send to the specified phone number. Answer in a thread.
+send message to <number> -- asks what message to send to the specified phone number. Answer in a thread.
 get gsm status -- asks about the status of the GSM line and returns the output.
 ask <request> -- executes a request to Asterisk CLI and returns the output.
 ```
