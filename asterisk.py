@@ -8,7 +8,7 @@ def runProcess(exe):
 
 @respond_to('help', re.IGNORECASE)
 def help(message):
-	help_message=" :wave: :robot_face: Hello! I'm @jarvis, a slackbot for talking with your personal Asterisk server easily. Here's how I work: \n\n"+\
+	help_message=" :wave: :robot_face: Hello! I'm @<SLACK_BOT>, a slackbot for talking with your personal Asterisk server easily. Here's how I work: \n\n"+\
             "  _Basic Commands:_  \n" +\
             "  `@<SLACK_BOT> call <number>` -- asks you what line to use to place the call. Answer in a thread to get connected.  \n" +\
             "  `@<SLACK_BOT> send message to <number>` -- asks what message to send to the specified phone number. Answer in a thread.  \n" +\
