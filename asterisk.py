@@ -80,6 +80,24 @@ def reply_sms(message, text):
 			else:
 				reply = "Sorry, it seems that I lost track of the recipient."
 				message.reply(reply, in_thread=True)
+		elif text == 'call back':
+			callBack	= incoming['attachments'][0]['footer']
+			if callBack == 'landline':
+				if number != '':
+					output = runProcess(["asterisk", "-rx", "channel originate sip/999 extension %(number)s@outbound-allroutes" % {'number': number}])
+					output = "I'm trying to connect you."
+					message.reply(output, in_thread=True)
+				else:
+					reply = "Sorry, it seems that I lost track of the recipient."
+					message.reply(reply, in_thread=True)
+			elif callBack == 'gsm':
+				if number != '':
+					output = "I'm trying to connect you."
+					message.reply(output, in_thread=True)
+					output = runProcess(["asterisk", "-rx", "channel originate sip/999 extension %(number)s@outbound-gsm" % {'number': number}])
+				else:
+					reply = "Sorry, it seems that I lost track of the recipient."
+					message.reply(reply, in_thread=True)
 		else:
 			if number != '':
 				state_machine = gammu.StateMachine()
