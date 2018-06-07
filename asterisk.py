@@ -117,10 +117,16 @@ def reply_sms(message, text):
 
 @respond_to('call (.*)', re.IGNORECASE)
 def makeCall(message, number):
-	attachments = [
-	{
-		'author_name': '%(number)s' % {'number': number},
-		'text': 'Sure thing. Using the landline or the gsm?',
-		'color': '#59afe1'
-        }]
-	message.send_webapi('', json.dumps(attachments))
+	if 'thread_ts' in message.body:
+		pass
+	else:
+		if number == 'back':
+			pass
+		else:
+			attachments = [
+			{
+				'author_name': '%(number)s' % {'number': number},
+				'text': 'Sure thing. Using the landline or the gsm?',
+				'color': '#59afe1'
+	        	}]
+			message.send_webapi('', json.dumps(attachments))
