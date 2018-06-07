@@ -12,6 +12,7 @@ def help(message):
             "  _Basic Commands:_  \n" +\
             "  `@<SLACK_BOT> call <number>` -- asks you what line to use to place the call. Answer in a thread to get connected.  \n" +\
             "  `@<SLACK_BOT> send message to <number>` -- asks what message to send to the specified phone number. Answer in a thread.  \n" +\
+            "  `@<SLACK_BOT> call back` -- in a thread, calls back the sender of a text message or the phone number associated with an incoming call.  \n" +\
             "  _Advanced Commands:_  \n" +\
             "  `@<SLACK_BOT> get gsm status` -- asks about the status of the GSM line and returns the output.  \n" +\
             "  `@<SLACK_BOT> ask <request>` -- executes a request to Asterisk CLI and returns the output.  \n\n" +\
